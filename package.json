@@ -1,5 +1,5 @@
 {
-  "name": "say2-cli",
+  "name": "say2",
   "version": "1.0.0",
   "description": "Interactive text-to-speech CLI with multiple voices using ElevenLabs API",
   "type": "module",

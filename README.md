@@ -13,7 +13,7 @@ An interactive text-to-speech command-line interface powered by ElevenLabs API. 
 ## Installation
 
 ```bash
-npm install -g say2-cli
+npm install -g say2
 ```
 
 ## Usage
@@ -68,7 +68,7 @@ say2 -l
 
 ## Configuration
 
-Settings are stored in `~/.say2config.json` including:
+Settings are stored in `~/.say2` including:
 - Default voice preference
 - ElevenLabs API key
 
@@ -123,4 +123,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-For issues and feature requests, please visit the [GitHub repository](https://github.com/yourusername/say2-cli).
+For issues and feature requests, please visit the [GitHub repository](https://github.com/jaequery/say2).
