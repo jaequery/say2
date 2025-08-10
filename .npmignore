@@ -1,0 +1,38 @@
+# Development files
+.git
+.gitignore
+.env
+.env.*
+*.log
+node_modules/
+
+# Config files (user specific)
+.say2config.json
+
+# Temporary files
+.say2_temp_*.mp3
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Documentation source
+docs/
+
+# Build files
+dist/
+build/

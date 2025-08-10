@@ -1,0 +1,54 @@
+{
+  "name": "say2-cli",
+  "version": "1.0.0",
+  "description": "Interactive text-to-speech CLI with multiple voices using ElevenLabs API",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "say2": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "tts",
+    "text-to-speech",
+    "elevenlabs",
+    "voice",
+    "cli",
+    "speech",
+    "audio",
+    "speak",
+    "say",
+    "voice-synthesis",
+    "command-line",
+    "interactive-cli"
+  ],
+  "author": "Jae Lee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaequery/say2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaequery/say2/issues"
+  },
+  "homepage": "https://github.com/jaequery/say2#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "commander": "^11.1.0",
+    "inquirer": "^12.9.1",
+    "node-fetch": "^3.3.2",
+    "ora": "^8.2.0",
+    "play-sound": "^1.1.6"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
