@@ -4,7 +4,7 @@ An interactive text-to-speech command-line interface powered by ElevenLabs API. 
 
 ## Features
 
-- 🎭 **Multiple Voices**: Choose from 9 different voices (Johnny, Rachel, Bella, Josh, Arnold, Adam, Antoni, Elli, Sam)
+- 🎭 **Multiple Voices**: Choose from 24 different voices with various accents and personalities
 - 💾 **Persistent Settings**: Save your preferred voice and API key for quick access
 - 🎨 **Interactive Menu**: User-friendly interface with colorful menus
 - ⚡ **Quick Mode**: Speak text instantly with saved preferences
@@ -85,15 +85,29 @@ Options:
 
 ## Available Voices
 
-- **johnny** - Male, American
-- **rachel** - Female, American
-- **bella** - Female, soft
-- **josh** - Male, deep
-- **arnold** - Male, strong
-- **adam** - Male, middle-aged
-- **antoni** - Male, well-rounded
-- **elli** - Female, young
-- **sam** - Male, raspy
+- **johnny** - Male, American, casual
+- **rachel** - Female, warm, professional
+- **bella** - Female, soft, gentle
+- **josh** - Male, deep, confident
+- **arnold** - Male, strong, authoritative
+- **adam** - Male, middle-aged, clear
+- **antoni** - Male, well-rounded, smooth
+- **elli** - Female, young, bright
+- **sam** - Male, raspy, character
+- **domi** - Female, confident, mature
+- **dave** - Male, British, conversational
+- **fin** - Male, Irish, friendly
+- **sarah** - Female, American, news
+- **charlie** - Male, casual, relaxed
+- **emily** - Female, calm, soothing
+- **charlotte** - Female, seductive, sultry
+- **matilda** - Female, warm, motherly
+- **matthew** - Male, deep, narrator
+- **james** - Male, Australian, calm
+- **joseph** - Male, British, articulate
+- **harry** - Male, anxious, nervous
+- **dorothy** - Female, elderly, wise
+- **george** - Male, British, warm
 
 ## Requirements
 
