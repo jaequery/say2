@@ -1,6 +1,6 @@
 {
   "name": "say2",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Interactive text-to-speech CLI with multiple voices using ElevenLabs API",
   "type": "module",
   "main": "index.js",

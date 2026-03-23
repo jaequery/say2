@@ -78,7 +78,7 @@ async function textToSpeech(text, voiceId, apiKey) {
     },
     body: JSON.stringify({
       text: text,
-      model_id: 'eleven_monolingual_v1',
+      model_id: 'eleven_multilingual_v2',
       voice_settings: {
         stability: 0.5,
         similarity_boost: 0.5
@@ -87,7 +87,14 @@ async function textToSpeech(text, voiceId, apiKey) {
   });
 
   if (!response.ok) {
-    throw new Error(`ElevenLabs API error: ${response.status} ${response.statusText}`);
+    let errorDetail = response.statusText;
+    try {
+      const errorBody = await response.json();
+      errorDetail = errorBody.detail?.message || JSON.stringify(errorBody.detail) || errorDetail;
+    } catch (e) {
+      // fall back to statusText
+    }
+    throw new Error(`ElevenLabs API error: ${response.status} - ${errorDetail}`);
   }
 
   const arrayBuffer = await response.arrayBuffer();
