@@ -377,7 +377,7 @@ async function directSpeak(text, providedApiKey) {
 program
   .name('say2')
   .description('Enhanced text-to-speech CLI with multiple voices using ElevenLabs')
-  .version('1.0.0')
+  .version(JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf8')).version)
   .argument('[text]', 'Text to speak (if not provided, enters interactive mode)')
   .option('-u, --user <voice>', 'Voice to use (overrides default)')
   .option('-k, --api-key <key>', 'ElevenLabs API key (or save it in settings)')
