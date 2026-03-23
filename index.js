@@ -17,31 +17,28 @@ const __dirname = path.dirname(__filename);
 const program = new Command();
 
 const voices = {
-  // Original voices
-  'johnny': { id: 'pNInz6obpgDQGcFmaJgB', desc: 'male, american, casual' },
-  'rachel': { id: '21m00Tcm4TlvDq8ikWAM', desc: 'female, warm, professional' },
-  'bella': { id: 'EXAVITQu4vr4xnSDxMaL', desc: 'female, soft, gentle' },
-  'josh': { id: 'TxGEqnHWrfWFTfGW9XjX', desc: 'male, deep, confident' },
-  'arnold': { id: 'VR6AewLTigWG4xSOukaG', desc: 'male, strong, authoritative' },
-  'adam': { id: 'pNInz6obpgDQGcFmaJgB', desc: 'male, middle-aged, clear' },
-  'antoni': { id: 'ErXwobaYiN019PkySvjV', desc: 'male, well-rounded, smooth' },
-  'elli': { id: 'MF3mGyEYCl7XYWbV9V6O', desc: 'female, young, bright' },
-  'sam': { id: 'yoZ06aMxZJJ28mfd3POQ', desc: 'male, raspy, character' },
-  // Additional popular voices
-  'domi': { id: 'AZnzlk1XvdvUeBnXmlld', desc: 'female, confident, mature' },
-  'dave': { id: 'CYw3kZ02Hs0563khs1Fj', desc: 'male, british, conversational' },
-  'fin': { id: 'D38z5RcWu1voky8WS1ja', desc: 'male, irish, friendly' },
-  'sarah': { id: 'EXAVITQu4vr4xnSDxMaL', desc: 'female, american, news' },
-  'charlie': { id: 'IKne3meq5aSn9XLyUdCD', desc: 'male, casual, relaxed' },
-  'emily': { id: 'LcfcDJNUP1GQjkzn1xUU', desc: 'female, calm, soothing' },
-  'charlotte': { id: 'XB0fDUnXU5powFXDhCwa', desc: 'female, seductive, sultry' },
-  'matilda': { id: 'XrExE9yKIg1WjnnlVkGX', desc: 'female, warm, motherly' },
-  'matthew': { id: 'Yko7PKHZNXotIFUBG7I9', desc: 'male, deep, narrator' },
-  'james': { id: 'ZQe5CZNOzWyzPSCn5a3c', desc: 'male, australian, calm' },
-  'joseph': { id: 'Zlb1dXrM653N07WRdFW3', desc: 'male, british, articulate' },
-  'harry': { id: 'SOYHLrjzK2X1ezoPC6cr', desc: 'male, anxious, nervous' },
-  'dorothy': { id: 'ThT5KcBeYPX3keUQqHPh', desc: 'female, elderly, wise' },
-  'george': { id: 'JBFqnCBsd6RMkjVDRZzb', desc: 'male, british, warm' }
+  // Free premade voices (available on all plans)
+  'roger':   { id: 'CwhRBWXzGAHq8TQ4Fs17', desc: 'male, american, laid-back casual', free: true },
+  'sarah':   { id: 'EXAVITQu4vr4xnSDxMaL', desc: 'female, american, reassuring', free: true },
+  'laura':   { id: 'FGY2WhTYpPnrIDTdsKH5', desc: 'female, american, quirky enthusiast', free: true },
+  'charlie': { id: 'IKne3meq5aSn9XLyUdCD', desc: 'male, australian, confident', free: true },
+  'george':  { id: 'JBFqnCBsd6RMkjVDRZzb', desc: 'male, british, warm storyteller', free: true },
+  'callum':  { id: 'N2lVS1w4EtoT3dr4eOWO', desc: 'male, american, husky trickster', free: true },
+  'river':   { id: 'SAz9YHcvj6GT2YYXdXww', desc: 'neutral, american, relaxed informative', free: true },
+  'harry':   { id: 'SOYHLrjzK2X1ezoPC6cr', desc: 'male, american, fierce warrior', free: true },
+  'liam':    { id: 'TX3LPaxmHKxFdv7VOQHJ', desc: 'male, american, energetic', free: true },
+  'alice':   { id: 'Xb7hH8MSUJpSbSDYk0k2', desc: 'female, british, clear educator', free: true },
+  'matilda': { id: 'XrExE9yKIg1WjnnlVkGX', desc: 'female, american, professional', free: true },
+  'will':    { id: 'bIHbv24MWmeRgasZH58o', desc: 'male, american, relaxed optimist', free: true },
+  'jessica': { id: 'cgSgspJ2msm6clMCkdW9', desc: 'female, american, playful bright', free: true },
+  'eric':    { id: 'cjVigY5qzO86Huf0OWal', desc: 'male, american, smooth trustworthy', free: true },
+  'bella':   { id: 'hpp4J3VqNfWAUOO0d1Us', desc: 'female, american, professional bright', free: true },
+  'chris':   { id: 'iP95p4xoKVk53GoZ742B', desc: 'male, american, charming', free: true },
+  'brian':   { id: 'nPczCjzI2devNBz1zQrb', desc: 'male, american, deep comforting', free: true },
+  'daniel':  { id: 'onwK4e9ZLuTAKqWW03F9', desc: 'male, british, steady broadcaster', free: true },
+  'lily':    { id: 'pFZP5JQG7iQjIQuC4Bku', desc: 'female, british, velvety actress', free: true },
+  'adam':    { id: 'pNInz6obpgDQGcFmaJgB', desc: 'male, american, dominant firm', free: true },
+  'bill':    { id: 'pqHfZKP75CvOlQylNhV4', desc: 'male, american, wise mature', free: true },
 };
 
 
@@ -161,9 +158,10 @@ async function selectVoice() {
   while (continueSelecting) {
     const voiceChoices = Object.keys(voices).map(voice => {
       const voiceInfo = voices[voice];
-      const displayName = voice === config.defaultVoice 
-        ? chalk.green(`${voice} ✓ (current) - ${chalk.gray(voiceInfo.desc)}`)
-        : `${voice} - ${chalk.gray(voiceInfo.desc)}`;
+      const tag = voiceInfo.free ? chalk.green('[free]') : chalk.yellow('[paid]');
+      const displayName = voice === config.defaultVoice
+        ? chalk.green(`${voice} ✓ (current)`) + ` ${tag} - ${chalk.gray(voiceInfo.desc)}`
+        : `${voice} ${tag} - ${chalk.gray(voiceInfo.desc)}`;
       return {
         name: displayName,
         value: voice
@@ -387,7 +385,8 @@ program
       console.log(chalk.cyan('Available voices:'));
       Object.keys(voices).forEach(voice => {
         const voiceInfo = voices[voice];
-        console.log(`  - ${voice} ${chalk.gray('(' + voiceInfo.desc + ')')}`);
+        const tag = voiceInfo.free ? chalk.green('[free]') : chalk.yellow('[paid]');
+        console.log(`  - ${voice} ${tag} ${chalk.gray('(' + voiceInfo.desc + ')')}`);
       });
       process.exit(0);
     }
